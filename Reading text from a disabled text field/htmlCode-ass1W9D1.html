@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--  reference: https://www.c-sharpcorner.com/article/javascript-input-field-enable-and-disable/ -->
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ </head>
+   <body>
+     <div class="container" style="width:500px;">  <br><br><br>
+	  <h4>Login</h4>
+		<form method="post">
+			<label>Username</label>
+			 <input type="text" name="name" id="name" class="form-control" value="Mawaddah Hanbali" disabled /><br />
+			<label>password</label>
+			<input type="password" name="name" id="pwd" class="form-control" placeholder="Hi -Enter you password" /><br />
+			<input type="button" id="btn" value="Submit" disabled />
+		</form>
+	   </div>
+	  </body>
+	 </html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+
+$('#name').keyup(function () {
+    var len = $(this).val().length;
+
+    if (len >= 5) {
+        $("#pwd").prop("disabled", false);
+    }
+    else{
+        $("#pwd").prop("disabled", true);
+    }
+});
+$('#pwd').keyup(function () {
+    var len = $(this).val().length;
+	 if (len >= 8) {
+        $("#btn").prop("disabled", false);
+    }
+    else{
+        $("#btn").prop("disabled", true);
+    }
+});
+</script>
